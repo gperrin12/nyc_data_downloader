@@ -63,7 +63,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS <YOUR_DB>.nyc_311 (
   latitude                         STRING,
   longitude                        STRING,
   location_latitude                STRING,
-  location_longitude               STRING
+  location_longitude               STRING,
+  h3_r8                            STRING,
+  h3_r9                            STRING,
+  h3_r10                           STRING
 )
 PARTITIONED BY (year STRING, month STRING)
 STORED AS PARQUET
@@ -103,7 +106,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS <YOUR_DB>.nypd_collisions (
   vehicle_type_code2                 STRING,
   vehicle_type_code_3                STRING,
   vehicle_type_code_4                STRING,
-  vehicle_type_code_5                STRING
+  vehicle_type_code_5                STRING,
+  h3_r8                              STRING,
+  h3_r9                              STRING,
+  h3_r10                             STRING
 )
 PARTITIONED BY (year STRING, month STRING)
 STORED AS PARQUET
