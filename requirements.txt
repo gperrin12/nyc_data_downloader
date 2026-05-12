@@ -1,0 +1,6 @@
+boto3>=1.34
+geopandas>=0.14
+pandas>=2.0
+pyarrow>=14.0
+requests>=2.31
+sodapy>=2.2
