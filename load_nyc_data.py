@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Iterator
 
 import boto3
+import h3
 import pyarrow as pa
 import pyarrow.parquet as pq
 from sodapy import Socrata
@@ -77,6 +78,55 @@ CHECKPOINT_DIR = Path("./checkpoints")
 
 PAGE_SIZE = 50_000  # Socrata max
 SOCRATA_DOMAIN = "data.cityofnewyork.us"
+
+# H3 resolutions for point rows (311 + collisions)
+H3_RESOLUTIONS = (8, 9, 10)
+
+
+def _h3_cell(lat: float, lon: float, resolution: int) -> str:
+    """h3 v4: latlng_to_cell; v3: geo_to_h3."""
+    if hasattr(h3, "latlng_to_cell"):
+        return h3.latlng_to_cell(lat, lon, resolution)
+    return h3.geo_to_h3(lat, lon, resolution)
+
+
+def _lat_lon_from_row(r: dict) -> tuple[float | None, float | None]:
+    """Prefer top-level latitude/longitude, then flattened location_* from Socrata."""
+    for lat_key, lon_key in (
+        ("latitude", "longitude"),
+        ("location_latitude", "location_longitude"),
+    ):
+        lat_raw, lon_raw = r.get(lat_key), r.get(lon_key)
+        if lat_raw is None or lon_raw is None:
+            continue
+        if isinstance(lat_raw, str) and not lat_raw.strip():
+            continue
+        if isinstance(lon_raw, str) and not lon_raw.strip():
+            continue
+        try:
+            lat = float(lat_raw)
+            lon = float(lon_raw)
+        except (TypeError, ValueError):
+            continue
+        if not (-90.0 <= lat <= 90.0 and -180.0 <= lon <= 180.0):
+            continue
+        return lat, lon
+    return None, None
+
+
+def _add_h3_columns(rows: list[dict]) -> None:
+    for r in rows:
+        lat, lon = _lat_lon_from_row(r)
+        if lat is None:
+            for res in H3_RESOLUTIONS:
+                r[f"h3_r{res}"] = None
+            continue
+        try:
+            for res in H3_RESOLUTIONS:
+                r[f"h3_r{res}"] = _h3_cell(lat, lon, res)
+        except Exception:
+            for res in H3_RESOLUTIONS:
+                r[f"h3_r{res}"] = None
 
 
 @dataclass
@@ -262,6 +312,8 @@ def rows_to_table(rows: list[dict]) -> pa.Table:
             else:
                 out[k] = str(v) if v is not None else None
         flat.append(out)
+
+    _add_h3_columns(flat)
 
     # Union of keys across rows; missing keys become None.
     all_keys = set()
