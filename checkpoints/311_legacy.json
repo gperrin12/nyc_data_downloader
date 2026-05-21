@@ -1,0 +1,485 @@
+{
+  "completed": [
+    {
+      "year": 2010,
+      "month": 1
+    },
+    {
+      "year": 2010,
+      "month": 2
+    },
+    {
+      "year": 2010,
+      "month": 3
+    },
+    {
+      "year": 2010,
+      "month": 4
+    },
+    {
+      "year": 2010,
+      "month": 5
+    },
+    {
+      "year": 2010,
+      "month": 6
+    },
+    {
+      "year": 2010,
+      "month": 7
+    },
+    {
+      "year": 2010,
+      "month": 8
+    },
+    {
+      "year": 2010,
+      "month": 9
+    },
+    {
+      "year": 2010,
+      "month": 10
+    },
+    {
+      "year": 2010,
+      "month": 11
+    },
+    {
+      "year": 2010,
+      "month": 12
+    },
+    {
+      "year": 2011,
+      "month": 1
+    },
+    {
+      "year": 2011,
+      "month": 2
+    },
+    {
+      "year": 2011,
+      "month": 3
+    },
+    {
+      "year": 2011,
+      "month": 4
+    },
+    {
+      "year": 2011,
+      "month": 5
+    },
+    {
+      "year": 2011,
+      "month": 6
+    },
+    {
+      "year": 2011,
+      "month": 7
+    },
+    {
+      "year": 2011,
+      "month": 8
+    },
+    {
+      "year": 2011,
+      "month": 9
+    },
+    {
+      "year": 2011,
+      "month": 10
+    },
+    {
+      "year": 2011,
+      "month": 11
+    },
+    {
+      "year": 2011,
+      "month": 12
+    },
+    {
+      "year": 2012,
+      "month": 1
+    },
+    {
+      "year": 2012,
+      "month": 2
+    },
+    {
+      "year": 2012,
+      "month": 3
+    },
+    {
+      "year": 2012,
+      "month": 4
+    },
+    {
+      "year": 2012,
+      "month": 5
+    },
+    {
+      "year": 2012,
+      "month": 6
+    },
+    {
+      "year": 2012,
+      "month": 7
+    },
+    {
+      "year": 2012,
+      "month": 8
+    },
+    {
+      "year": 2012,
+      "month": 9
+    },
+    {
+      "year": 2012,
+      "month": 10
+    },
+    {
+      "year": 2012,
+      "month": 11
+    },
+    {
+      "year": 2012,
+      "month": 12
+    },
+    {
+      "year": 2013,
+      "month": 1
+    },
+    {
+      "year": 2013,
+      "month": 2
+    },
+    {
+      "year": 2013,
+      "month": 3
+    },
+    {
+      "year": 2013,
+      "month": 4
+    },
+    {
+      "year": 2013,
+      "month": 5
+    },
+    {
+      "year": 2013,
+      "month": 6
+    },
+    {
+      "year": 2013,
+      "month": 7
+    },
+    {
+      "year": 2013,
+      "month": 8
+    },
+    {
+      "year": 2013,
+      "month": 9
+    },
+    {
+      "year": 2013,
+      "month": 10
+    },
+    {
+      "year": 2013,
+      "month": 11
+    },
+    {
+      "year": 2013,
+      "month": 12
+    },
+    {
+      "year": 2014,
+      "month": 1
+    },
+    {
+      "year": 2014,
+      "month": 2
+    },
+    {
+      "year": 2014,
+      "month": 3
+    },
+    {
+      "year": 2014,
+      "month": 4
+    },
+    {
+      "year": 2014,
+      "month": 5
+    },
+    {
+      "year": 2014,
+      "month": 6
+    },
+    {
+      "year": 2014,
+      "month": 7
+    },
+    {
+      "year": 2014,
+      "month": 8
+    },
+    {
+      "year": 2014,
+      "month": 9
+    },
+    {
+      "year": 2014,
+      "month": 10
+    },
+    {
+      "year": 2014,
+      "month": 11
+    },
+    {
+      "year": 2014,
+      "month": 12
+    },
+    {
+      "year": 2015,
+      "month": 1
+    },
+    {
+      "year": 2015,
+      "month": 2
+    },
+    {
+      "year": 2015,
+      "month": 3
+    },
+    {
+      "year": 2015,
+      "month": 4
+    },
+    {
+      "year": 2015,
+      "month": 5
+    },
+    {
+      "year": 2015,
+      "month": 6
+    },
+    {
+      "year": 2015,
+      "month": 7
+    },
+    {
+      "year": 2015,
+      "month": 8
+    },
+    {
+      "year": 2015,
+      "month": 9
+    },
+    {
+      "year": 2015,
+      "month": 10
+    },
+    {
+      "year": 2015,
+      "month": 11
+    },
+    {
+      "year": 2015,
+      "month": 12
+    },
+    {
+      "year": 2016,
+      "month": 1
+    },
+    {
+      "year": 2016,
+      "month": 2
+    },
+    {
+      "year": 2016,
+      "month": 3
+    },
+    {
+      "year": 2016,
+      "month": 4
+    },
+    {
+      "year": 2016,
+      "month": 5
+    },
+    {
+      "year": 2016,
+      "month": 6
+    },
+    {
+      "year": 2016,
+      "month": 7
+    },
+    {
+      "year": 2016,
+      "month": 8
+    },
+    {
+      "year": 2016,
+      "month": 9
+    },
+    {
+      "year": 2016,
+      "month": 10
+    },
+    {
+      "year": 2016,
+      "month": 11
+    },
+    {
+      "year": 2016,
+      "month": 12
+    },
+    {
+      "year": 2017,
+      "month": 1
+    },
+    {
+      "year": 2017,
+      "month": 2
+    },
+    {
+      "year": 2017,
+      "month": 3
+    },
+    {
+      "year": 2017,
+      "month": 4
+    },
+    {
+      "year": 2017,
+      "month": 5
+    },
+    {
+      "year": 2017,
+      "month": 6
+    },
+    {
+      "year": 2017,
+      "month": 7
+    },
+    {
+      "year": 2017,
+      "month": 8
+    },
+    {
+      "year": 2017,
+      "month": 9
+    },
+    {
+      "year": 2017,
+      "month": 10
+    },
+    {
+      "year": 2017,
+      "month": 11
+    },
+    {
+      "year": 2017,
+      "month": 12
+    },
+    {
+      "year": 2018,
+      "month": 1
+    },
+    {
+      "year": 2018,
+      "month": 2
+    },
+    {
+      "year": 2018,
+      "month": 3
+    },
+    {
+      "year": 2018,
+      "month": 4
+    },
+    {
+      "year": 2018,
+      "month": 5
+    },
+    {
+      "year": 2018,
+      "month": 6
+    },
+    {
+      "year": 2018,
+      "month": 7
+    },
+    {
+      "year": 2018,
+      "month": 8
+    },
+    {
+      "year": 2018,
+      "month": 9
+    },
+    {
+      "year": 2018,
+      "month": 10
+    },
+    {
+      "year": 2018,
+      "month": 11
+    },
+    {
+      "year": 2018,
+      "month": 12
+    },
+    {
+      "year": 2019,
+      "month": 1
+    },
+    {
+      "year": 2019,
+      "month": 2
+    },
+    {
+      "year": 2019,
+      "month": 3
+    },
+    {
+      "year": 2019,
+      "month": 4
+    },
+    {
+      "year": 2019,
+      "month": 5
+    },
+    {
+      "year": 2019,
+      "month": 6
+    },
+    {
+      "year": 2019,
+      "month": 7
+    },
+    {
+      "year": 2019,
+      "month": 8
+    },
+    {
+      "year": 2019,
+      "month": 9
+    },
+    {
+      "year": 2019,
+      "month": 10
+    },
+    {
+      "year": 2019,
+      "month": 11
+    },
+    {
+      "year": 2019,
+      "month": 12
+    }
+  ],
+  "updated_at": "2026-05-19T20:09:23.405711"
+}
