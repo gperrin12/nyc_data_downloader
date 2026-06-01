@@ -63,6 +63,51 @@ After at least one dataset finishes:
 4. Run `MSCK REPAIR TABLE` after each subsequent loader completion to pick
    up new partitions
 
+## MTA subway hourly ridership
+
+A separate loader, `load_mta_turnstile.py`, pulls MTA subway hourly ridership.
+
+**No app token needed.** This dataset is hosted on **NY State** Open Data
+(`data.ny.gov`), not NYC Open Data, and is queryable anonymously. Setting
+`SOCRATA_APP_TOKEN` is optional (it only raises rate limits). It still uses the
+same `NYC_DATA_BUCKET`, `NYC_DATA_PREFIX`, and `AWS_PROFILE` env vars as the
+other loaders.
+
+Full history spans two source resources, both loaded into one `mta_turnstile`
+dataset / `mta_turnstile_hourly` table:
+
+- `wujg-7c2s` — 2020–2024
+- `5wq4-mkjj` — 2025–present
+
+Unlike the 311/crashes loaders (all STRING), columns are written with proper
+types: `transit_timestamp` as TIMESTAMP, `ridership`/`transfers`/`latitude`/
+`longitude` as DOUBLE, plus derived `h3_r8`/`h3_r9`/`h3_r10` (resolutions 8/9/10
+from the station lat/lon).
+
+Dry run first (validates the API and prints the resolved schema, no S3 writes):
+
+```bash
+python load_mta_turnstile.py --source all --dry-run
+```
+
+Then the real load:
+
+```bash
+python load_mta_turnstile.py --source all          # ~60-90 min full history
+python load_mta_turnstile.py --source 2020_2024    # just the 2020-2024 resource
+python load_mta_turnstile.py --source 2025_present # just the 2025-present resource
+```
+
+**This dataset is large (~100M+ rows).** Run it on EC2 or inside `tmux`/`screen`
+so it survives disconnects. The loader is resumable at **offset granularity** —
+each 50k page is written as its own `part-N.parquet` and the checkpoint
+(`./checkpoints/mta_turnstile.json`) records the next offset within the
+in-progress month, so an interrupted run resumes mid-month.
+
+Register the table in Athena with `mta_turnstile_ddl.sql` (same flow as above:
+replace the placeholders, run the `CREATE EXTERNAL TABLE`, then
+`MSCK REPAIR TABLE mta_turnstile_hourly`).
+
 ## Schema notes
 
 All columns are STRING. Cast at query time:
